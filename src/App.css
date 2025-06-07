@@ -67,7 +67,7 @@ body {
   }
 
   li.email-input {
-    width: 100%;
+    flex: 1 0 50%;
     height: 100%;
   }
 

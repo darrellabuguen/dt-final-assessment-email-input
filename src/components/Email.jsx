@@ -24,9 +24,11 @@ const Email = () => {
   const handleKeyPress = (e) => {
     const pressedKey = e.key;
     if (pressedKey === "Enter" || pressedKey === "Tab") {
-      handleRegister(email);
-      e.target.value = "";
-      setTyped(false);
+      if (e.target.value.length !== 0) {
+        handleRegister(email);
+        e.target.value = "";
+        setTyped(false);
+      }
     }
     else if (pressedKey === "Backspace") {
       backSpaceDelete();
