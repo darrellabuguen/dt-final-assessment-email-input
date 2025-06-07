@@ -42,17 +42,37 @@ input[type="email"] {
   width: 400px;
   height: 49.47px;
   border-radius: 8px;
-  background-color: #FDFDFD;
+  background-color: white;
   border: none;
   outline: none;
   font-size: 1rem;
   font-weight: 400;
 }
 
+.email-container {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
 .similar-email-container {
+  margin-top: 0;
+  background-color: #FDFDFD;
   width: 300px;
-  height: 267px;
+  max-height: 267px;
   overflow-y: scroll;
+  list-style: none;
+  padding: 1rem 0 1rem 0;
+  border-radius: 4px;
+
+  li {
+    text-align: left;
+    padding: 1rem;
+  }
+
+  li:hover {
+    background-color: #EFF5F9;
+  }
 }
 
 @keyframes App-logo-spin {

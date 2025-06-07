@@ -26,10 +26,12 @@ const Email = () => {
   }, [email])
 
   return (
-    <div>
-      <input type="email" placeholder='Enter recipients...' onChange={handleInputChange} />
+    <>
+      <ul className='email-container'>
+        <li><input type="email" placeholder='Enter recipients...' onChange={handleInputChange} /></li>
+      </ul>
       {typed && <Similar similar={similarEmail} />}
-    </div>
+    </>
   )
 }
 

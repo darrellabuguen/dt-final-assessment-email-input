@@ -1,16 +1,14 @@
 import React, { useState } from 'react'
 
 const Similar = ({ similar }) => {
-  let id = 0;
   return (
-    <div className='similar-email-container'>
-      {similar.map((similarEmail) => {
-        id++;
+    <ul className='similar-email-container'>
+      {similar.map((similarEmail, index) => {
         return (
-          <div key={id}>{similarEmail}</div>
+          <li key={index}>{similarEmail}</li>
         )
       })}
-    </div>
+    </ul>
   )
 }
 
