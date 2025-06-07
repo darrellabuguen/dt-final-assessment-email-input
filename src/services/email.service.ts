@@ -5,6 +5,6 @@ export const getEmails = (email: string) => {
     const findEmail = emails.filter(em => em.startsWith(`${email}`));
     setTimeout(() => {
       resolve(findEmail);
-    }, 1000);
+    }, 500);
   });
 }

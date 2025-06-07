@@ -37,22 +37,82 @@ body {
   justify-content: center;
 }
 
-input[type="email"] {
-  padding: 0 12.6px;
-  width: 400px;
-  height: 49.47px;
+.main-container {
+  width: 100%;
+  height: 100%;
+  background-color: #FDFDFD;
   border-radius: 8px;
-  background-color: white;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  font-weight: 400;
 }
 
 .email-container {
+  position: relative;
+  width: 400px;
+  height: fit-content;
   list-style-type: none;
-  padding-left: 0;
+  padding: 0 12.6px;
   margin: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  li>input[type="email"] {
+    background-color: white;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 400;
+    width: 100%;
+    height: 49.47px;
+  }
+
+  li.email-input {
+    width: 100%;
+    height: 100%;
+  }
+
+  li:not(.email-input) {
+    display: flex;
+    align-items: center;
+    margin-top: .5rem;
+    padding: 5px 8px;
+    gap: 8px;
+    border-radius: 6px;
+    width: fit-content;
+    font-size: 14px;
+    font-weight: 700px;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    span {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    span img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  li:not(.email-input, .invalid-email):hover {
+    background-color: #EDEDED;
+  }
+}
+
+.invalid-email {
+  background-color: #F3C0C4;
+  font-size: 14px;
+  font-weight: 700;
+
+  &:hover {
+    background-color: #F3C0C4;
+  }
 }
 
 .similar-email-container {
@@ -72,6 +132,29 @@ input[type="email"] {
 
   li:hover {
     background-color: #EFF5F9;
+  }
+}
+
+.loading {
+  width: 20px;
+  height: 20px;
+  background-color: whitesmoke;
+  border-radius: 50px;
+  border: solid 5px gainsboro;
+  border-top: 5px rgb(50, 156, 255) solid;
+  position: absolute;
+  top: .5rem;
+  right: 1rem;
+  animation: spin infinite 1s linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
 
