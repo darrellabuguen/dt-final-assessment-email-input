@@ -11,6 +11,7 @@ const Email = () => {
   const [registeredEmails, setRegisteredEmails] = useState([]);
   let [id, setId] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const placeHolder = registeredEmails.length > 0 ? "" : "Enter recipients...";
 
   const handleInputChange = (e) => {
     if (e.target.value !== "") {
@@ -81,7 +82,7 @@ const Email = () => {
         <ul className='email-container'>
           <RegisteredEmails registered={registeredEmails} handleRemoveEmail={removeEmail} />
           <li className='email-input'>
-            <input type="email" placeholder='Enter recipients...'
+            <input type="email" placeholder={placeHolder}
               onChange={handleInputChange}
               onKeyDown={handleKeyPress}
             />
